@@ -1,0 +1,14 @@
+persistence:
+  accessMode: ReadWriteMany
+  storageClass: rook-cephfs
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: netbox.r2dlan.me
+      paths:
+        - /
+  tls:
+    - secretName: netbox-tls
+      hosts:
+        - netbox.r2dlan.me

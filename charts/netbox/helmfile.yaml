@@ -1,0 +1,16 @@
+repositories:
+  - name: netbox
+    url: https://charts.netbox.oss.netboxlabs.com/
+
+helmDefaults:
+  timeout: 1200
+
+releases:
+  - name: netbox
+    namespace: netbox
+    chart: netbox/netbox
+    version: 5.0.57
+    wait: true
+    atomic: true
+    values:
+      - values/netbox.yaml.gotmpl
