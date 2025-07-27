@@ -1,0 +1,4 @@
+apiVersion: v2
+name: ceph-configuration
+version: 0.1.0
+description: Deploys ceph cluster configuration
