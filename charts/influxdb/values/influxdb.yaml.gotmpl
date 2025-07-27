@@ -1,0 +1,10 @@
+persistence:
+  size: 10Gi
+ingress:
+  enabled: true
+  className: nginx
+  hostname: influxdb.r2dlan.me
+  tls: true
+  secretName: influxdb-tls
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-dns
