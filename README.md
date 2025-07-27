@@ -18,6 +18,10 @@ This setup runs a full-featured [K3s](https://k3s.io/) cluster on **Raspberry Pi
 - **1 × Dedicated Router with BGP Support**
 - Gigabit LAN per node
 
+![](./docs/pics/raspi01.jpg)
+![](./docs/pics/raspi02.jpg)
+![](./docs/pics/raspi03.jpg)
+
 ---
 
 ## Architecture
