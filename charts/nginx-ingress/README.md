@@ -1,4 +1,4 @@
-# 🌐 NGINX Ingress Controller – Helmfile Deployment Guide
+# NGINX Ingress Controller – Helmfile Deployment Guide
 
 This guide explains how to deploy the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) using **Helmfile**. It enables routing external HTTP(S) traffic into your Kubernetes cluster.
 
