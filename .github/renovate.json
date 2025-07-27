@@ -10,7 +10,7 @@
   },
   "packageRules": [
     {
-      "matchDatasources": ["helm"],
+      "matchDatasources": ["helmfile"],
       "matchPackageNames": ["ceph", "ceph-*"],
       "groupName": "ceph charts",
       "separateMajorMinor": true
