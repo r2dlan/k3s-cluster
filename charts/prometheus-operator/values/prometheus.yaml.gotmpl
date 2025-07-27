@@ -1,0 +1,29 @@
+crds:
+  enabled: true
+defaultRules:
+  rules:
+    alertmanager: false
+alertmanager:
+  enabled: false
+grafana:
+  enabled: false
+prometheus:
+  prometheusSpec:
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: rook-ceph-block
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 10Gi
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-dns
+    hosts:
+      - prometheus.r2dlan.me
+    tls:
+      - secretName: prometheus-general-tls
+        hosts:
+          - prometheus.r2dlan.me
