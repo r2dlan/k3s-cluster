@@ -18,5 +18,6 @@ releases:
     version: 0.1.0
     wait: true
     atomic: true
+    disableValidation: true
     values:
       - values/metallb-configuration.yaml.gotmpl
