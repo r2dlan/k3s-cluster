@@ -5,7 +5,7 @@ volume:
 ingress:
   enabled: true
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-dns
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
   hosts:
     - host: uptime.r2dlan.me
       paths:

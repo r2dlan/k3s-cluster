@@ -20,7 +20,7 @@ prometheus:
   ingress:
     enabled: true
     annotations:
-      cert-manager.io/cluster-issuer: letsencrypt-dns
+      cert-manager.io/cluster-issuer: letsencrypt-issuer
     hosts:
       - prometheus.r2dlan.me
     tls:
