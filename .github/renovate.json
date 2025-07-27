@@ -10,16 +10,11 @@
   },
   "packageRules": [
     {
-      "matchDatasources": ["helmfile"],
-      "matchPackageNames": ["ceph", "ceph-*", "rook-*"],
-      "groupName": "helm chart ceph",
-      "separateMajorMinor": true
-    },
-    {
       "matchManagers": ["helmfile"],
       "matchDatasources": ["helm"],
       "groupName": "helm charts",
-      "separateMajorMinor": true
+      "separateMajorMinor": true,
+      "groupBy": "file"
     }
   ]
 }
