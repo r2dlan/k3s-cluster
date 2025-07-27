@@ -1,0 +1,13 @@
+repositories:
+  - name: grafana
+    url: https://grafana.github.io/helm-charts
+
+releases:
+  - name: grafana
+    namespace: grafana
+    chart: grafana/grafana
+    version: 9.3.0
+    wait: true
+    atomic: true
+    values:
+      - values/grafana.yaml.gotmpl

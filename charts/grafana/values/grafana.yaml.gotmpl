@@ -1,0 +1,24 @@
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-dns
+  hosts:
+    - grafana.r2dlan.me
+  tls:
+    - secretName: grafana-tls
+      hosts:
+        - grafana.r2dlan.me
+persistence:
+  enabled: true
+  size: 5Gi
+  storageClassName: rook-cephfs
+  accessModes: [ReadWriteMany]
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        url: http://prometheus-operator-kube-p-prometheus.prometheus-operator:9090
+        access: proxy
+        isDefault: true
