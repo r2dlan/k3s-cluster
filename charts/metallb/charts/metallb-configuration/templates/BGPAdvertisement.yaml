@@ -1,0 +1,13 @@
+---
+apiVersion: metallb.io/v1beta1
+kind: BGPAdvertisement
+metadata:
+  name: {{ .Values.peer.name }}-advertisement
+spec:
+  ipAddressPools:
+{{- range .Values.pools }}
+    - {{ .name }}-peer
+{{- end }}
+  aggregationLength: 32
+  localPref: 100
+  communities: {{ .Values.peer.communities }}

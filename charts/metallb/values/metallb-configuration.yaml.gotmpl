@@ -1,0 +1,12 @@
+pool:
+  - name: mikrotik
+    addresses:
+      - 192.168.214.2-192.168.214.244
+
+peer:
+  name: mikrotik
+  address: 192.168.212.1
+  asn: 64512
+  myasn: 64513
+  communities:
+    - 64512:64520

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: metallb-configuration
+version: 0.1.0
+description: Deploys metallb configuration

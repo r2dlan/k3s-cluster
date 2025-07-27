@@ -1,0 +1,22 @@
+repositories:
+  - name: metallb
+    url: https://metallb.github.io/metallb
+
+releases:
+  - name: metallb
+    namespace: r2dlan-system
+    chart: metallb/metallb
+    version: 0.14.9
+    wait: true
+    atomic: true
+
+  - name: metallb-configuration
+    needs:
+      - metallb
+    namespace: r2dlan-system
+    chart: ./charts/metallb-configuration
+    version: 0.1.0
+    wait: true
+    atomic: true
+    values:
+      - values/metallb-configuration.yaml.gotmpl

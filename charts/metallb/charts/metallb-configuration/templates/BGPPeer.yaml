@@ -1,0 +1,11 @@
+---
+apiVersion: metallb.io/v1beta2
+kind: BGPPeer
+metadata:
+  name: {{ .Values.peer.name }}-peer
+spec:
+  peerAddress: {{ .Values.peer.address }}
+  peerASN: {{ .Values.peer.asn }}
+  myASN: {{ .Values.peer.myasn }}
+  holdTime: 90s
+  keepaliveTime: 30s

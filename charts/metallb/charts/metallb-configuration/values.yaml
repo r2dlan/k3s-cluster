@@ -1,0 +1,10 @@
+pool:
+  - name:
+    address: []
+
+peer:
+  name:
+  address:
+  asn:
+  myasn:
+  communities: []
