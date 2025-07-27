@@ -1,0 +1,22 @@
+repositories:
+  - name: jetstack
+    url: https://charts.jetstack.io
+
+releases:
+  - name: cert-manager
+    namespace: cert-manager
+    chart: jetstack/cert-manager
+    version: v1.17.1
+    wait: true
+    atomic: true
+
+  - name: cert-manager-configuration
+    needs:
+      - cert-manager
+    namespace: cert-manager
+    chart: ./charts/cert-manager-configuration
+    version: 0.1.0
+    wait: true
+    atomic: true
+    values:
+      - values/cert-manager-configuration.yaml.gotmpl

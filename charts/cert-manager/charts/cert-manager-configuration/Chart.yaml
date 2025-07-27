@@ -1,0 +1,4 @@
+apiVersion: v2
+name: cert-manager-configuration
+version: 0.1.0
+description: Deploys cert-manager configuration
