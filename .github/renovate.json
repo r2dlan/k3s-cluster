@@ -1,7 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
-  "schedule": ["before 15:00 on Tuesday"],
   "timezone": "Etc/UTC",
   "automerge": false,
   "enabledManagers": ["helmfile"],
@@ -14,15 +13,13 @@
       "matchDatasources": ["helm"],
       "matchPackageNames": ["ceph", "ceph-*"],
       "groupName": "ceph charts",
-      "separateMajorMinor": true,
-      "schedule": ["before 15:00 on Tuesday"]
+      "separateMajorMinor": true
     },
     {
       "matchManagers": ["helmfile"],
       "matchDatasources": ["helm"],
       "groupName": "other helm charts",
-      "separateMajorMinor": true,
-      "schedule": ["before 15:00 on Tuesday"]
+      "separateMajorMinor": true
     }
   ]
 }
