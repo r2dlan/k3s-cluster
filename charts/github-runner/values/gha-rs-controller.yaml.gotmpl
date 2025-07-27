@@ -1,0 +1,5 @@
+set:
+  - name: rbac.create
+    value: false
+authSecret:
+  github_token: ref+k8s://v1/Secret/kube-system/r2dlan-secrets/gh_runner_token

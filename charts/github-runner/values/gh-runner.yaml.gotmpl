@@ -1,0 +1,9 @@
+githubConfigUrl: "https://github.com/r2dlan"
+githubConfigSecret:
+  github_token: ref+k8s://v1/Secret/kube-system/r2dlan-secrets/gh_runner_token
+controllerServiceAccount:
+  namespace: gha-runner
+  name: gha-rs-controller
+runnerGroup: r2dlan
+runnerScaleSetName: r2dlan-runner
+maxRunners: 2

@@ -1,0 +1,21 @@
+releases:
+  - name: gha-rs-controller
+    namespace: gha-runner
+    createNamespace: true
+    chart: "oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set-controller"
+    version: 0.12.1
+    wait: true
+    atomic: true
+    values:
+      - values/gha-rs-controller.yaml.gotmpl
+
+  - name: "actions-runner"
+    needs:
+      - gha-rs-controller
+    namespace: gha-runner
+    chart: "oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set"
+    version: 0.12.1
+    wait: true
+    atomic: true
+    values:
+      - values/gh-runner.yaml.gotmpl
