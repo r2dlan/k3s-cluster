@@ -12,9 +12,15 @@
     {
       "matchManagers": ["helmfile"],
       "matchDatasources": ["helm"],
+      "matchPackagePatterns": ["rook*", "ceph*"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["helmfile"],
+      "matchDatasources": ["helm"],
+      "matchPackagePatterns": ["*"],
       "groupName": "helm charts",
-      "separateMajorMinor": true,
-      "groupBy": "file"
+      "separateMajorMinor": true
     }
   ]
 }
