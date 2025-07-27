@@ -1,0 +1,17 @@
+volume:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 4Gi
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-dns
+  hosts:
+    - host: uptime.r2dlan.me
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+    - secretName: uptime-tls
+      hosts:
+        - uptime.r2dlan.me
