@@ -6,7 +6,7 @@ releases:
   - name: prometheus-operator
     namespace: prometheus-operator
     chart: prometheus-community/kube-prometheus-stack
-    version: 70.3.0
+    version: 75.15.0
     createNamespace: true
     wait: true
     atomic: true
