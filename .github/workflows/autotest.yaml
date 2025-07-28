@@ -1,0 +1,45 @@
+name: Test Helmfiles
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "charts/**"
+
+jobs:
+  validate:
+    runs-on: r2dlan-runner
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Helm + Helmfile
+        uses: azure/setup-helm@v3
+        with:
+          version: "v3.12.0"
+
+      - name: Install helmfile
+        run: |
+          curl -L https://github.com/helmfile/helmfile/releases/download/v0.156.0/helmfile_0.156.0_linux_amd64.tar.gz | tar xz
+          sudo mv helmfile /usr/local/bin
+
+      - name: Find changed helmfile.yaml files
+        id: changes
+        run: |
+          git fetch origin main
+          CHANGED=$(git diff --name-only origin/main...HEAD | grep '^charts/.*/helmfile.yaml$' || true)
+          echo "changed_helmfiles<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGED" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Test changed Helmfiles
+        if: steps.changes.outputs.changed_helmfiles != ''
+        run: |
+          echo "${{ steps.changes.outputs.changed_helmfiles }}" | while read file; do
+            echo "Testing $file"
+            cd $(dirname "$file")
+            helmfile lint
+            helmfile template
+            cd -
+          done
