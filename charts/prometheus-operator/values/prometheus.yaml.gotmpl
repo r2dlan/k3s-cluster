@@ -1,14 +1,25 @@
 crds:
   enabled: true
+
 defaultRules:
   rules:
     alertmanager: false
+
 alertmanager:
   enabled: false
+
 grafana:
   enabled: false
+
+nodeExporter:
+  aix:
+    enabled: false
+  darwin:
+    enabled: false
+
 prometheus:
   prometheusSpec:
+    retention: 30d
     storageSpec:
       volumeClaimTemplate:
         spec:
@@ -17,6 +28,7 @@ prometheus:
           resources:
             requests:
               storage: 10Gi
+
   ingress:
     enabled: true
     annotations:
