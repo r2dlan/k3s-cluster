@@ -1,6 +1,8 @@
 name: Test Helmfiles
 
 on:
+  workflow_dispatch:
+
   pull_request:
     branches:
       - main
