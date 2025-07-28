@@ -1,6 +1,18 @@
+global:
+  valkey:
+    password: ref+k8s://v1/Secret/kube-system/r2dlan-secrets/netbox_valkey
+  postgresql:
+    auth:
+      password: ref+k8s://v1/Secret/kube-system/r2dlan-secrets/netbox_postgres_password
+
+superuser:
+  password: ref+k8s://v1/Secret/kube-system/r2dlan-secrets/netbox_superuser_password
+  apiToken: ref+k8s://v1/Secret/kube-system/r2dlan-secrets/netbox_superuser_apitoken
+
 persistence:
   accessMode: ReadWriteMany
   storageClass: rook-cephfs
+
 ingress:
   enabled: true
   className: nginx
