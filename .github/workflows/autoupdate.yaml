@@ -28,6 +28,10 @@ jobs:
           curl -L https://github.com/helmfile/helmfile/releases/download/v1.1.3/helmfile_1.1.3_linux_arm64.tar.gz | tar xz
           sudo mv helmfile /usr/local/bin
 
+      - name: Install helm-diff plugin
+        run: |
+          helm plugin install https://github.com/databus23/helm-diff
+
       - name: Update application
         run: |
           for chart in $(git diff --name-only HEAD^ HEAD | grep '^charts/' | cut -d '/' -f1-2 | sort -u)
