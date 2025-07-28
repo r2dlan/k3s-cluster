@@ -1,0 +1,9 @@
+---
+- name: Update distribution packages
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Upgrade security packages only
+  ansible.builtin.apt:
+    upgrade: dist

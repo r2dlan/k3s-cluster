@@ -1,0 +1,19 @@
+all:
+  hosts:
+    k8s-master-01:
+      ansible_host: 192.168.212.130
+    k8s-agent-01:
+      ansible_host: 192.168.212.131
+    k8s-agent-02:
+      ansible_host: 192.168.212.132
+    k8s-agent-03:
+      ansible_host: 192.168.212.133
+  children:
+    master:
+      hosts:
+        k8s-master-01:
+    agent:
+      hosts:
+        k8s-agent-01:
+        k8s-agent-02:
+        k8s-agent-03:

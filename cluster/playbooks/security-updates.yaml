@@ -1,0 +1,14 @@
+---
+- name: Update k3s master with security patches
+  hosts: master
+  remote_user: pi
+  become: true
+  roles:
+    - packages
+
+- name: Update k3s nodes with security patches
+  hosts: agent
+  remote_user: pi
+  become: true
+  roles:
+    - packages
