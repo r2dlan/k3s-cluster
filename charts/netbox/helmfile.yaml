@@ -9,7 +9,7 @@ releases:
   - name: netbox
     namespace: netbox
     chart: netbox/netbox
-    version: 6.0.59
+    version: 6.0.60
     wait: true
     atomic: true
     values:
