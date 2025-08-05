@@ -1,0 +1,15 @@
+provider:
+    name: cloudflare
+
+env:
+  - name: CF_API_TOKEN
+    valueFrom:
+      secretKeyRef:
+        name: cloudflare-api-key
+        key: apiKey
+
+policy: sync
+
+extraArgs:
+    - --source=ingress
+    - --cloudflare-dns-records-per-page=100
