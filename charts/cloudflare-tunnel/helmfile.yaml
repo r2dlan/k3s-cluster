@@ -1,0 +1,14 @@
+repositories:
+  - name: cloudflare
+    url: https://cloudflare.github.io/helm-charts
+
+releases:
+  - name: tunnel
+    namespace: cf-tunnel
+    createNamespace: true
+    chart: "cloudflare/cloudflare-tunnel"
+    version: 0.3.2
+    wait: true
+    atomic: true
+    values:
+      - values/cloudflare-tunnel.yaml.gotmpl

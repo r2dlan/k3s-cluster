@@ -1,0 +1,9 @@
+cloudflare:
+    account: ref+k8s://v1/Secret/kube-system/r2dlan-secrets/cloudflared_account
+    tunnelName: R2DLan
+    tunnelId: ref+k8s://v1/Secret/kube-system/r2dlan-secrets/cloudflared_tunnelId
+    secret: ref+k8s://v1/Secret/kube-system/r2dlan-secrets/cloudflared_secret
+
+image:
+    repository: cloudflare/cloudflared
+    tag: 2025.7.0
