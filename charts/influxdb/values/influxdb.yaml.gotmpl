@@ -8,3 +8,9 @@ ingress:
   secretName: influxdb-tls
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-issuer
+adminUser:
+  organization: "influxdata"
+  bucket: "default"
+  user: "admin"
+  retention_policy: "0s"
+  password: ref+k8s://v1/Secret/kube-system/r2dlan-secrets/influxdb_admin_pw
