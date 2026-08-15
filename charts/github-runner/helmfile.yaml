@@ -14,7 +14,7 @@ releases:
       - gha-rs-controller
     namespace: gha-runner
     chart: "oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set"
-    version: 0.12.1
+    version: 0.14.2
     wait: true
     atomic: true
     values:
