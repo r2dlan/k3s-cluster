@@ -7,7 +7,7 @@ releases:
     namespace: external-dns
     createNamespace: true
     chart: "external-dns/external-dns"
-    version: 1.18.0
+    version: 1.22.0
     wait: true
     atomic: true
     values:
